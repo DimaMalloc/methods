@@ -66,11 +66,12 @@ namespace methods
 
             switch (Choise) {
                 case 1:
-                    Console.WriteLine();
+                    Console.WriteLine("Введите предложение:");
                     string[] ArrayWords = SplitWords(Console.ReadLine());
                     PrintingArray(ArrayWords);
                     break;
                 default:
+                    Console.WriteLine("Введите предложение:");
                     string[] ArrWords = SplitWords(Console.ReadLine());
                     PrintingArray(ReversWords(ArrWords)); 
                     break;
