@@ -40,13 +40,14 @@ namespace methods
         /// </summary>
         /// <param name="inputPhrase"></param>
         /// <returns>Возвращает обратный массив</returns>
-        static string[] ReversWords(string[] inputPhrase)
+        static string[] ReversWords(string inputPhrase)
         {
-            int lenght = inputPhrase.Length;
+            string[] ArrayWords = SplitWords(inputPhrase);
+            int lenght = ArrayWords.Length;
             string[] ReverseArr = new string[lenght];
             for (int i = 0; i < lenght; i++)
             {
-                ReverseArr[i] = inputPhrase[lenght-i-1];
+                ReverseArr[i] = ArrayWords[lenght-i-1];
             }
             return ReverseArr;
 
@@ -72,8 +73,8 @@ namespace methods
                     break;
                 default:
                     Console.WriteLine("Введите предложение:");
-                    string[] ArrWords = SplitWords(Console.ReadLine());
-                    PrintingArray(ReversWords(ArrWords)); 
+                    string[] ArrWords = ReversWords(Console.ReadLine());
+                    PrintingArray(ArrWords); 
                     break;
             
             }  
